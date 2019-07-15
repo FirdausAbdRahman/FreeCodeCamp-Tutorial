@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>FCC Random Quote Machine</title>
+</head>
+
+
+<body>
+  <div id="quote-box" class = "container-fluid text-center">
+    <h1>Random Quote Generator</h1>
+    <p>It's just a random sentence, but a quote</p>
+       
+    <button id="new-quote" class="btn btn-default" type="submit">New Quote</button>
+     <div class="quotes">
+      <span id="text" class="quote">Hello World</span>
+      <span id="author" class="author">-World</span>
+     </div>
+
+      <br>
+
+    <a href="twitter.com/intent/tweet" target="_blank" id="tweet-quote">Tweet</a>
+    </div>
+      
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+  
+  function getQuote(){
+    const quotes = ["Hello World!", "Hello Sea!", "Hello Sky!"];
+    const authors = ["-Author1", "-Author2", "-Author3"];
+    const randomNum = Math.floor((Math.random()*quotes.length));
+  
+    const randomQuote = quotes[randomNum];
+    const randomAuthor = authors[randomNum];
+    
+    $(".quote").text(randomQuote);
+    $(".author").text(randomAuthor);
+  }
+    
+  $(".btn").on("click", function(){
+    getQuote();
+  });
+      
+});
+  </script>
+        
+</body>
+
+</html>
